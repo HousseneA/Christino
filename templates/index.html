@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" >
+
+
+        <form method="POST" action="{{url_for('registre')}}" enctype = "multipart/form-data" >
+      <label>nom</label><input  type="text" name="nom" class="form-control" placeholder="entrer le nom"/>
+           <label>email</label><input   type="email" name="email" class="form-control" placeholder="entrer l'email"/>
+           <label>password</label><input   type="password" name="password" class="form-control" placeholder="entrer le password"/>
+             <label>password</label><input   type="password" name="password2" class="form-control" placeholder="confirmer password"/>
+
+
+          
+           <button class="btn btn-success"  >valider</button>
+            </form>
+            <table className="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
+                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                    <th className="text-secondary opacity-7"></th>
+                  </tr>
+                </thead>
+                {% for row in donner  %} 
+                <tr>
+                    <td>
+                      <div className="d-flex px-2 py-1">
+                        <div>
+
+                        </div>
+                        <div className="d-flex flex-column justify-content-center">
+                          <h6 className="mb-0 text-sm"></h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p className="text-xs font-weight-bold mb-0">{{row.1}}</p>
+                    </td>
+                    <td className="align-middle text-center text-sm">
+                      <span className="badge badge-sm bg-gradient-success">{{row.2}}</span>
+                    </td>
+                    <td className="align-middle text-center text-sm">
+                        <span className="badge badge-sm bg-gradient-success">{{row.3}}</span>
+                      </td>
+                       <td className="align-middle text-center text-sm">
+                        <a href="/sup/{{row.0}}" className="badge badge-sm bg-gradient-success">suppression</a>
+                      </td>
+                    
+                    <td className="align-middle text-center text-sm">
+                
+                     
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+    </div>
+ 
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

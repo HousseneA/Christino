@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>authification</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container" >
+        <form method="POST" action="{{url_for('authcontrole')}}" enctype = "multipart/form-data" >
+            <label>email</label><input   type="email" name="email" class="form-control" placeholder="entrer l'email"/>
+           <label>password</label><input  type="password" name="password" class="form-control" placeholder="entrer le mot de pass"/>
+
+           <button class="btn btn-success"  >valider</button>
+            </form>
+    </div>
+ 
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
